@@ -55,15 +55,7 @@ namespace TIKTAK
                 return false;
             }
 
-            if (checkWinner())
-            {
-                Console.WriteLine("Wygranko!");
-                Console.ReadKey();
-            }
-            else
-            {
-                Console.WriteLine("Gramy dalej!");
-            }
+            
 
 
             while (ruch < 10)
@@ -76,30 +68,43 @@ namespace TIKTAK
 
                 if (wybor2 == 1)
                 {
-                    if (ruch % 2 != 0)
+                    if (tablica[0] == "-")
                     {
-                        tablica[0] = "O";
-                        ruch = ruch + 1;
-                        Console.Clear();
-                        Console.WriteLine("{0}", string.Join(" ", tablica));
-                        Console.WriteLine("{0}", string.Join(" ", tablica1));
-                        Console.WriteLine("{0}", string.Join(" ", tablica2));
-                        Console.WriteLine("Obecna kolejka to numer: {0} ", ruch);
-                    }else { 
-                    tablica[0] = "X";
-                    ruch = ruch+1;
-                    Console.Clear();
-                    Console.WriteLine("{0}", string.Join(" ", tablica));
-                    Console.WriteLine("{0}", string.Join(" ", tablica1));
-                    Console.WriteLine("{0}", string.Join(" ", tablica2));
-                        Console.WriteLine("Obecna kolejka to numer: {0} ", ruch);
+                        if (ruch % 2 != 0)
+                        {
+                            tablica[0] = "O";
+                            ruch = ruch + 1;
+                            Console.Clear();
+                            Console.WriteLine("{0}", string.Join(" ", tablica));
+                            Console.WriteLine("{0}", string.Join(" ", tablica1));
+                            Console.WriteLine("{0}", string.Join(" ", tablica2));
+                            Console.WriteLine("Obecna kolejka to numer: {0} ", ruch);
+                        }
+                        else
+                        {
+                            tablica[0] = "X";
+                            ruch = ruch + 1;
+                            Console.Clear();
+                            Console.WriteLine("{0}", string.Join(" ", tablica));
+                            Console.WriteLine("{0}", string.Join(" ", tablica1));
+                            Console.WriteLine("{0}", string.Join(" ", tablica2));
+                            Console.WriteLine("Obecna kolejka to numer: {0} ", ruch);
+                        }
+
                     }
+                    else { Console.WriteLine("Wybierz inne pole, te juz ktos zająl"); continue; }
+                    
+
+
 
                 }
 
                 else if (wybor2 == 2)
                 {
-                    if(ruch % 2 != 0)
+
+                    if (tablica[1] == "-")
+                    {
+                        if (ruch % 2 != 0)
                     {
                         tablica[1] = "O";
                         ruch = ruch + 1;
@@ -118,12 +123,18 @@ namespace TIKTAK
                         Console.WriteLine("{0}", string.Join(" ", tablica2));
                         Console.WriteLine("Obecna kolejka to numer: {0} ", ruch);
                     }
+                    }
+                    else { Console.WriteLine("Wybierz inne pole, te juz ktos zająl"); continue; }
                 }
                 else if (wybor2 == 3)
                 {
-                    if(ruch % 2 != 0)
+                    if (tablica[2] == "-")
                     {
-                        tablica[2] = "O";
+                        if (ruch % 2 != 0)
+                    {
+                        
+                        
+                            tablica[2] = "O";
                         ruch = ruch + 1;
                         Console.Clear();
                         Console.WriteLine("{0}", string.Join(" ", tablica));
@@ -141,9 +152,13 @@ namespace TIKTAK
                         Console.WriteLine("Obecna kolejka to numer: {0} ", ruch);
                     }
                 }
+                else { Console.WriteLine("Wybierz inne pole, te juz ktos zająl"); continue; }
+            }
                 else if (wybor2 == 4)
                 {
-                    if (ruch % 2 != 0)
+                    if (tablica1[0] == "-")
+                    {
+                        if (ruch % 2 != 0)
                     {
                         tablica1[0] = "O";
                         ruch = ruch + 1;
@@ -162,11 +177,15 @@ namespace TIKTAK
                         Console.WriteLine("{0}", string.Join(" ", tablica1));
                         Console.WriteLine("{0}", string.Join(" ", tablica2));
                         Console.WriteLine("Obecna kolejka to numer: {0} ", ruch);
+                        }
                     }
+                    else { Console.WriteLine("Wybierz inne pole, te juz ktos zająl"); continue; }
                 }
                 else if (wybor2 == 5)
                 {
-                    if (ruch % 2 != 0)
+                        if (tablica1[1] == "-")
+                        {
+                            if (ruch % 2 != 0)
                     {
                         tablica1[1] = "O";
                         ruch = ruch + 1;
@@ -185,11 +204,15 @@ namespace TIKTAK
                         Console.WriteLine("{0}", string.Join(" ", tablica1));
                         Console.WriteLine("{0}", string.Join(" ", tablica2));
                         Console.WriteLine("Obecna kolejka to numer: {0} ", ruch);
+                        }
                     }
+                    else { Console.WriteLine("Wybierz inne pole, te juz ktos zająl"); continue; }
                 }
                 else if (wybor2 == 6)
                 {
-                    if (ruch % 2 != 0)
+                            if (tablica1[2] == "-")
+                            {
+                                if (ruch % 2 != 0)
                     {
                         tablica1[2] = "O";
                         ruch = ruch + 1;
@@ -208,11 +231,15 @@ namespace TIKTAK
                         Console.WriteLine("{0}", string.Join(" ", tablica1));
                         Console.WriteLine("{0}", string.Join(" ", tablica2));
                        Console.WriteLine("Obecna kolejka to numer: {0} ", ruch);
+                        }
                     }
+                    else { Console.WriteLine("Wybierz inne pole, te juz ktos zająl"); continue; }
                 }
                 else if (wybor2 == 7)
                 {
-                    if (ruch % 2 != 0)
+                                if (tablica2[0] == "-")
+                                {
+                                    if (ruch % 2 != 0)
                     {
                         tablica2[0] = "O";
                         ruch = ruch + 1;
@@ -231,11 +258,15 @@ namespace TIKTAK
                         Console.WriteLine("{0}", string.Join(" ", tablica1));
                         Console.WriteLine("{0}", string.Join(" ", tablica2));
                         Console.WriteLine("Obecna kolejka to numer: {0} ", ruch);
+                        }
                     }
+                    else { Console.WriteLine("Wybierz inne pole, te juz ktos zająl"); continue; }
                 }
                 else if (wybor2 == 8)
                 {
-                    if (ruch % 2 != 0)
+                                    if (tablica2[1] == "-")
+                                    {
+                                        if (ruch % 2 != 0)
                     {
                         tablica2[1] = "O";
                         ruch = ruch + 1;
@@ -254,11 +285,15 @@ namespace TIKTAK
                         Console.WriteLine("{0}", string.Join(" ", tablica1));
                         Console.WriteLine("{0}", string.Join(" ", tablica2));
                         Console.WriteLine("Obecna kolejka to numer: {0} ", ruch);
+                        }
                     }
+                    else { Console.WriteLine("Wybierz inne pole, te juz ktos zająl"); continue; }
                 }
                 else if (wybor2 == 9)
                 {
-                    if (ruch % 2 != 0)
+                                        if (tablica2[2] == "-")
+                                        {
+                                            if (ruch % 2 != 0)
                     {
                         tablica2[2] = "O";
                         ruch = ruch + 1;
@@ -277,10 +312,22 @@ namespace TIKTAK
                         Console.WriteLine("{0}", string.Join(" ", tablica1));
                         Console.WriteLine("{0}", string.Join(" ", tablica2));
                         Console.WriteLine("Obecna kolejka to numer: {0} ", ruch);
+                        }
                     }
+                    else { Console.WriteLine("Wybierz inne pole, te juz ktos zająl"); continue; }
                 }
                 checkWinner();
-                //Checks();
+                if (checkWinner())
+                {
+                    Console.WriteLine("Wygranko!");
+                    Console.ReadKey();
+                    Console.WriteLine("Koniec gry");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Gramy dalej!");
+                }
 
             }
 
@@ -288,17 +335,7 @@ namespace TIKTAK
             
         }
 
-        private static void Checks (string[] tablica, string[] tablica1, string[] tablica2)
-        {
-            if (tablica[0] == "X" && tablica[1] == "X" && tablica[2] == "X")
-            {
-                Console.WriteLine("Wygranko gracza od Xa");
-                return;
-             
-            }
-            else
-            { };
-        }
+  
 
 
     }
