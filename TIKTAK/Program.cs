@@ -6,6 +6,7 @@ namespace TIKTAK
     {
         static void Main(string[] args)
         {
+            int ruch = 1;
             string[] tablica = new string[3];
             string[] tablica1 = new string[3];
             string[] tablica2 = new string[3];
@@ -22,7 +23,7 @@ namespace TIKTAK
 
             
             
-            int ruch = 1;
+            
            
 
             bool checkWinnerX()
@@ -65,7 +66,7 @@ namespace TIKTAK
                 return false;
             }
 
-
+           
 
 
 
@@ -351,10 +352,40 @@ namespace TIKTAK
                     Console.WriteLine("Gramy dalej!");
                 }
 
+                if (ruch >= 10)
+                {
+                    Console.Clear();
+                    Console.WriteLine("REMIS!");
+                    Console.WriteLine("Czy chcesz zagrac od nowa?");
+                    string wybors = Console.ReadLine();
+                    if (wybors == "Y" || wybors == "T")
+                    {
+                        ruch = 1;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            tablica[i] = "-";
+                            tablica1[i] = "-";
+                            tablica2[i] = "-";
+                        }
+                        Console.WriteLine("{0}", string.Join(" ", tablica));
+                        Console.WriteLine("{0}", string.Join(" ", tablica1));
+                        Console.WriteLine("{0}", string.Join(" ", tablica2));
+                    }
+                    else if (wybors == "N")
+                    {
+
+                        Console.ReadKey();
+                        Console.Clear();
+                        Console.WriteLine("Dzięki za grę");
+                    }
+                    else { Console.WriteLine("Ale co Ty tu piszesz?"); Console.ReadKey(); }
+                }
+
             }
-
-
             
+
+
+
         }
 
   
