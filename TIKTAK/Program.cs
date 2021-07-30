@@ -25,37 +25,48 @@ namespace TIKTAK
             int ruch = 1;
            
 
-            bool checkWinner()
+            bool checkWinnerX()
             {
                 // check rows
                 if (tablica[0] == "X" && tablica[1] == "X" && tablica[2] == "X") { return true; }
                 if (tablica1[0] == "X" && tablica1[1] == "X" && tablica1[2] == "X") { return true; }
                 if (tablica2[0] == "X" && tablica2[1] == "X" && tablica2[2] == "X") { return true; }
 
-                if (tablica[0] == "O" && tablica[1] == "O" && tablica[2] == "O") { return true; }
-                if (tablica1[0] == "O" && tablica1[1] == "O" && tablica1[2] == "O") { return true; }
-                if (tablica2[0] == "O" && tablica2[1] == "O" && tablica2[2] == "O") { return true; }
+               
 
                 // check columns
                 if (tablica[0] == "X" && tablica1[0] == "X" && tablica2[0] == "X") { return true; }
                 if (tablica[1] == "X" && tablica1[1] == "X" && tablica2[1] == "X") { return true; }
                 if (tablica[2] == "X" && tablica1[2] == "X" && tablica2[2] == "X") { return true; }
 
-                if (tablica[0] == "O" && tablica1[0] == "O" && tablica2[0] == "O") { return true; }
-                if (tablica[1] == "O" && tablica1[1] == "O" && tablica2[1] == "O") { return true; }
-                if (tablica[2] == "O" && tablica1[2] == "O" && tablica2[2] == "O") { return true; }
+               
 
                 // check diags
                 if (tablica[0] == "X" && tablica1[1] == "X" && tablica2[2] == "X") { return true; }
                 if (tablica[2] == "X" && tablica1[1] == "X" && tablica2[0] == "X") { return true; }
 
-                if (tablica[0] == "O" && tablica1[1] == "O" && tablica2[2] == "O") { return true; }
-                if (tablica[2] == "O" && tablica1[1] == "O" && tablica2[0] == "O") { return true; }
+                
 
                 return false;
             }
 
-            
+            bool checkWinnerO()
+            {
+                if (tablica[0] == "O" && tablica[1] == "O" && tablica[2] == "O") { return true; }
+                if (tablica1[0] == "O" && tablica1[1] == "O" && tablica1[2] == "O") { return true; }
+                if (tablica2[0] == "O" && tablica2[1] == "O" && tablica2[2] == "O") { return true; }
+                if (tablica[0] == "O" && tablica1[0] == "O" && tablica2[0] == "O") { return true; }
+                if (tablica[1] == "O" && tablica1[1] == "O" && tablica2[1] == "O") { return true; }
+                if (tablica[2] == "O" && tablica1[2] == "O" && tablica2[2] == "O") { return true; }
+                if (tablica[0] == "O" && tablica1[1] == "O" && tablica2[2] == "O") { return true; }
+                if (tablica[2] == "O" && tablica1[1] == "O" && tablica2[0] == "O") { return true; }
+
+
+                return false;
+            }
+
+
+
 
 
             while (ruch < 10)
@@ -316,11 +327,22 @@ namespace TIKTAK
                     }
                     else { Console.WriteLine("Wybierz inne pole, te juz ktos zająl"); continue; }
                 }
-                checkWinner();
-                if (checkWinner())
+                checkWinnerO();
+                checkWinnerX();
+                if (checkWinnerX())
                 {
-                    Console.WriteLine("Wygranko!");
+                   
+                    Console.WriteLine("Wygranko Pana od X!");
                     Console.ReadKey();
+                    Console.Clear();
+                    Console.WriteLine("Koniec gry");
+                    break;
+                }
+                else if (checkWinnerO())
+                {
+                    Console.WriteLine("Wygranko Pana od O!");
+                    Console.ReadKey();
+                    Console.Clear();
                     Console.WriteLine("Koniec gry");
                     break;
                 }
